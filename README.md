@@ -1,6 +1,6 @@
 # meals
 
-This template should help get you started developing with Vue 3 in Vite.
+这是一个基于 Vue 3+Pinia的点餐网站，可以让用户在线浏览菜单、加入购物车、下单
 
 ## Recommended IDE Setup
 
