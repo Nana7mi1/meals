@@ -1,13 +1,22 @@
 <script setup>
 import { ref } from "vue";
-import { getTest } from "../../apis/testAPI"
+import { loginApi } from "../../apis/testAPI"
 
 const phone = ref("");
 const password = ref("");
 
-const getData = () => {
-    getTest().then(res => {
-        console.log(res);
+const login = () => {
+    const data = {
+        "userName": phone.value,
+        "password": password.value
+    };
+    console.log(data);
+    loginApi(data).then(response => {
+        const token = response.data.token;
+        localStorage.setItem('token', token);
+    }).catch(error => {
+        console.log(error);
+        // 处理错误情况
     })
 }
 
@@ -34,7 +43,7 @@ const getData = () => {
                     </button>
                 </div>
             </div>
-            <button class="loginbtn" @click="getData">登录</button>
+            <button class="loginbtn" @click="login">登录</button>
         </div>
     </div>
 </template>

@@ -3,7 +3,7 @@ import { useMealsStore } from './stores/meals';
 import Meals from './components/Meals/Meals.vue'
 import MealsFilter from './components/MealsFilter/MealsFilter.vue';
 import CartBar from './components/Cart/CartBar.vue';
-import Login from './components/Login/Login.vue';
+import Login from './views/Login/Login.vue';
 const measlList = useMealsStore()
 </script>
 
