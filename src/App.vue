@@ -11,8 +11,9 @@ const measlList = useMealsStore()
     <!-- <MealsFilter></MealsFilter>
     <Meals :desc="true" :meals="measlList.filterMeals"></Meals>
     <CartBar></CartBar> -->
+    <router-view></router-view>
 
-    <Login></Login>
+    <!-- <Login></Login> -->
 </template>
 
 <style scoped></style>

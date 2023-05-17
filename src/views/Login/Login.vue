@@ -1,22 +1,24 @@
 <script setup>
 import { ref } from "vue";
 import { loginApi } from "../../apis/testAPI"
-
+import { ElMessage } from 'element-plus'
+import {useRouter} from "vue-router"
 const phone = ref("");
 const password = ref("");
+const router = useRouter()
 
 const login = () => {
     const data = {
         "userName": phone.value,
         "password": password.value
     };
-    console.log(data);
     loginApi(data).then(response => {
         const token = response.data.token;
         localStorage.setItem('token', token);
+        ElMessage.success("登录成功！");
+        router.push('/')
     }).catch(error => {
-        console.log(error);
-        // 处理错误情况
+        ElMessage.error("账号密码错误，请重试！");
     })
 }
 
